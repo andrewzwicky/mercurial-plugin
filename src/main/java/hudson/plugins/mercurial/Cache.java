@@ -202,7 +202,7 @@ class Cache {
                                 // to actually exclude those head sets, but not a big deal. (Hg 1.5 fixes that but leaves
                                 // a major bug that if no csets are selected, the whole repo will be bundled; fortunately
                                 // this case should be caught by equality check above.)
-                                if (HgExe.joinWithPossibleTimeout(masterHg.bundle(localHeads, bundleFileName).
+                                if (HgExe.joinWithPossibleTimeout(masterHg.bundleAll(bundleFileName).
                                         pwd(masterCache), useTimeout, listener) != 0) {
                                     listener.error("Failed to send outgoing changes");
                                     return null;
